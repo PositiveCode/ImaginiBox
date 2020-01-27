@@ -1,42 +1,34 @@
 package com.geneus.imaginibox.ui.main;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.graphics.Canvas;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.geneus.imaginibox.R;
-import com.geneus.imaginibox.ui.BiDirectionScrollView;
-import com.geneus.imaginibox.ui.CanvasView;
+import com.geneus.imaginibox.ui.MyCanvasView;
 
-public class MainActivity extends AppCompatActivity implements MainContract.View {
+public class MainActivity extends AppCompatActivity {
 
     private RelativeLayout rlCanvas;
     private Button btnTwoByTwo;
     private Button btnThreeByThree;
-    private MainContract.Presenter mPresenter;
+    private MyCanvasView myCanvasView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        new MainPresenter(this, this);
-
         initView();
         initCanvas();
         initClickListener();
     }
 
     private void initCanvas() {
-        CanvasView canvasView = new CanvasView(this, false);
-        rlCanvas.addView(canvasView);
+        myCanvasView = new MyCanvasView(this, false);
+        rlCanvas.addView(myCanvasView);
     }
 
     private void initView(){
@@ -49,20 +41,15 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         btnThreeByThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                myCanvasView.setTwoByTwo(false);
             }
         });
 
-        btnThreeByThree.setOnClickListener(new View.OnClickListener() {
+        btnTwoByTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                myCanvasView.setTwoByTwo(true);
             }
         });
-    }
-
-    @Override
-    public void setPresenter(MainContract.Presenter presenter) {
-        mPresenter = presenter;
     }
 }
