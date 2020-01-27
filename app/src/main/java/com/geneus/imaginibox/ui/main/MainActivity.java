@@ -2,60 +2,63 @@ package com.geneus.imaginibox.ui.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 
 import com.geneus.imaginibox.R;
+import com.geneus.imaginibox.ui.BiDirectionScrollView;
 import com.geneus.imaginibox.ui.CanvasView;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View {
 
     private RelativeLayout rlCanvas;
+    private Button btnTwoByTwo;
+    private Button btnThreeByThree;
     private MainContract.Presenter mPresenter;
-
-    public ScrollView scrollView;
-    public HorizontalScrollView horizontalScrollView;
-    public LinearLayout linearLayout;
-    public Canvas mCanvas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        new MainPresenter(this, this);
 
-        linearLayout = new LinearLayout(this);
-        scrollView = new ScrollView(this);
-        horizontalScrollView = new HorizontalScrollView(this);
+        initView();
+        initCanvas();
+        initClickListener();
+    }
 
+    private void initCanvas() {
+        CanvasView canvasView = new CanvasView(this, false);
+        rlCanvas.addView(canvasView);
+    }
 
-        scrollView.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,
-                RelativeLayout.LayoutParams.WRAP_CONTENT));
+    private void initView(){
+        rlCanvas = findViewById(R.id.rlCanvas);
+        btnThreeByThree = findViewById(R.id.btnThreeByThree);
+        btnTwoByTwo = findViewById(R.id.btnTwoByTwo);
+    }
 
-        horizontalScrollView.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
-                RelativeLayout.LayoutParams.MATCH_PARENT));
+    private void initClickListener(){
+        btnThreeByThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        linearLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.MATCH_PARENT));
+            }
+        });
 
-        linearLayout.setOrientation(LinearLayout.VERTICAL);
+        btnThreeByThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        Bitmap mBitmap = Bitmap.createBitmap(800, 800, Bitmap.Config.ARGB_8888);
-
-        mCanvas = new Canvas(mBitmap);
-
-        CanvasView canvasView = new CanvasView(this, mCanvas);
-
-        canvasView.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,
-                RelativeLayout.LayoutParams.MATCH_PARENT));
-
-        scrollView.addView(canvasView);
-        horizontalScrollView.addView(scrollView);
-
-        setContentView(horizontalScrollView);
+            }
+        });
     }
 
     @Override
