@@ -4,9 +4,13 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
+
+import com.geneus.imaginibox.R;
 
 public class MyCanvasView extends View {
     private Paint mPaint;
@@ -20,6 +24,8 @@ public class MyCanvasView extends View {
 
     private ScaleGestureDetector scaleDetector;
     private float scaleFactor = 1.f;
+
+    private Drawable mImage;
 
     public MyCanvasView(Context context, boolean isTwoByTwo) {
         super(context);
@@ -37,6 +43,18 @@ public class MyCanvasView extends View {
         this.isTwoByTwo = isTwoByTwo;
 
         scaleDetector = new ScaleGestureDetector(context, new ScaleListener());
+
+        mImage = getResources().getDrawable(R.drawable.ic_launcher_foreground);
+        mImage.setBounds(mPadding, mPadding, mImage.getIntrinsicWidth(), mImage.getIntrinsicHeight());
+
+    }
+
+    public MyCanvasView(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+
+    public MyCanvasView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
     }
 
     private int mDimension = 350;
@@ -68,6 +86,7 @@ public class MyCanvasView extends View {
             drawRect(canvas, mPadding + mDimension*2, mPadding + mDimension*2, mDimension*3, mDimension*3, mPaint);
 
         }
+        mImage.draw(canvas);
         canvas.scale(scaleFactor, scaleFactor);
 
     }

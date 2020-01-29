@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.geneus.imaginibox.R;
 import com.geneus.imaginibox.ui.MyCanvasView;
+import com.geneus.imaginibox.ui.MyImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnTwoByTwo;
     private Button btnThreeByThree;
     private MyCanvasView myCanvasView;
+    private MyImageView myImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +32,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initCanvas() {
-        myCanvasView = new MyCanvasView(this, false);
-        rlCanvas.addView(myCanvasView);
+//        myCanvasView = new MyCanvasView(this, false);
+//        rlCanvas.addView(myCanvasView);
+        myImageView = new MyImageView(this);
+        rlCanvas.addView(myImageView);
     }
 
     private void initView(){
