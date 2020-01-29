@@ -32,39 +32,40 @@ public class MyCanvasView extends View {
         mPaint.setColor(Color.BLACK);
         mPaint.setStrokeWidth(5);
 
-        mPadding = 100;
+        mPadding = 50;
 
         this.isTwoByTwo = isTwoByTwo;
 
         scaleDetector = new ScaleGestureDetector(context, new ScaleListener());
     }
 
+    private int mDimension = 350;
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (isTwoByTwo) {
             //top 2 rects
-            drawRect(canvas, mPadding, mPadding, 800, 800, mPaint);
-            drawRect(canvas, mPadding + 800, mPadding, 1600, 800, mPaint);
+            drawRect(canvas, mPadding, mPadding, mDimension, mDimension, mPaint);
+            drawRect(canvas, mPadding + mDimension, mPadding, mDimension *2, mDimension, mPaint);
 
             //bottom 2 rects
-            drawRect(canvas, mPadding, mPadding + 800, 800, 1600, mPaint);
-            drawRect(canvas, mPadding + 800, mPadding + 800, 1600, 1600, mPaint);
+            drawRect(canvas, mPadding, mPadding + mDimension, mDimension, mDimension*2, mPaint);
+            drawRect(canvas, mPadding + mDimension, mPadding + mDimension, mDimension*2, mDimension*2, mPaint);
         } else {
             //top 3 rects
-            drawRect(canvas, mPadding, mPadding, 800, 800, mPaint);
-            drawRect(canvas, mPadding + 800, mPadding, 1600, 800, mPaint);
-            drawRect(canvas, mPadding + 1600, mPadding, 2400, 800, mPaint);
+            drawRect(canvas, mPadding, mPadding, mDimension, mDimension, mPaint);
+            drawRect(canvas, mPadding + mDimension, mPadding, mDimension*2, mDimension, mPaint);
+            drawRect(canvas, mPadding + mDimension*2, mPadding, mDimension*3, mDimension, mPaint);
 
             //middle 3 rects
-            drawRect(canvas, mPadding, mPadding + 800, 800, 1600, mPaint);
-            drawRect(canvas, mPadding + 800, mPadding + 800, 1600, 1600, mPaint);
-            drawRect(canvas, mPadding + 1600, mPadding + 800, 2400, 1600, mPaint);
+            drawRect(canvas, mPadding, mPadding + mDimension, mDimension, mDimension*2, mPaint);
+            drawRect(canvas, mPadding + mDimension, mPadding + mDimension, mDimension*2, mDimension*2, mPaint);
+            drawRect(canvas, mPadding + mDimension*2, mPadding + mDimension, mDimension*3, mDimension*2, mPaint);
 
             //bottom 3 rects
-            drawRect(canvas, mPadding, mPadding + 1600, 800, 2400, mPaint);
-            drawRect(canvas, mPadding + 800, mPadding + 1600, 1600, 2400, mPaint);
-            drawRect(canvas, mPadding + 1600, mPadding + 1600, 2400, 2400, mPaint);
+            drawRect(canvas, mPadding, mPadding + mDimension*2, mDimension, mDimension*3, mPaint);
+            drawRect(canvas, mPadding + mDimension, mPadding + mDimension*2, mDimension*2, mDimension*3, mPaint);
+            drawRect(canvas, mPadding + mDimension*2, mPadding + mDimension*2, mDimension*3, mDimension*3, mPaint);
 
         }
         canvas.scale(scaleFactor, scaleFactor);

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         initView();
         initCanvas();
         initClickListener();
+
+        Toast.makeText(this, "Pinch to zoom in or zoom out...", Toast.LENGTH_SHORT).show();
     }
 
     private void initCanvas() {
