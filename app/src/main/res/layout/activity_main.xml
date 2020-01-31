@@ -6,35 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainActivity">
 
-    <RelativeLayout
-        android:id="@+id/rlCanvas"
+    <LinearLayout
+        android:id="@+id/llCanvas"
         android:layout_width="800dp"
-        android:layout_height="800dp">
-
-    </RelativeLayout>
+        android:layout_height="800dp"
+        android:orientation="vertical">
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true">
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnTwoByTwo"
-            android:text="2x2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="2x2" />
 
         <View
             android:layout_width="50dp"
-            android:layout_height="0dp"/>
+            android:layout_height="0dp" />
 
         <Button
             android:id="@+id/btnThreeByThree"
-            android:text="3x3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="3x3" />
 
     </LinearLayout>
 

@@ -1,4 +1,4 @@
-package com.geneus.imaginibox.ui.utils;
+package com.geneus.imaginibox.utils;
 
 import android.content.Context;
 import android.util.DisplayMetrics;

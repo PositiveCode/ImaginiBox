@@ -11,4 +11,14 @@ public class MainPresenter implements MainContract.Presenter {
         this.mView = mView;
         mView.setPresenter(this);
     }
+
+    @Override
+    public void onTwoByTwo() {
+        mView.showTwoByTwo();
+    }
+
+    @Override
+    public void onThreeByThree() {
+        mView.showThreeByThree();
+    }
 }
