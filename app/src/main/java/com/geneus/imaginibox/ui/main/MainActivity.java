@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.geneus.imaginibox.R;
-import com.geneus.imaginibox.ui.viewComponents.TriSquareLinearLayout;
+import com.geneus.imaginibox.ui.viewComponents.LinearLayout.TriSquareLinearLayout;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View {
 

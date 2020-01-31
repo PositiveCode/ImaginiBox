@@ -1,10 +1,12 @@
-package com.geneus.imaginibox.ui.viewComponents;
+package com.geneus.imaginibox.ui.viewComponents.LinearLayout;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
+
+import com.geneus.imaginibox.ui.viewComponents.GPUImageView.SquareGPUImgView;
 
 public class TriSquareLinearLayout extends LinearLayout {
 

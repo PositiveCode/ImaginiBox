@@ -1,10 +1,11 @@
-package com.geneus.imaginibox.ui.viewComponents;
+package com.geneus.imaginibox.ui.viewComponents.GPUImageView;
 
 
 import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.widget.Toast;
 
 import com.geneus.imaginibox.R;
 import com.geneus.imaginibox.async.SetImageAsync;
@@ -30,6 +31,7 @@ public class SquareGPUImgView extends GPUImageView {
         switch (action) {
             case MotionEvent.ACTION_DOWN: {
                 new SetImageAsync(this, getContext()).execute("");
+                Toast.makeText(getContext(), "Tap again for random filter effect.", Toast.LENGTH_SHORT).show();
                 break;
             }
 
