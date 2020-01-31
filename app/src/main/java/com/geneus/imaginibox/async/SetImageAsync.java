@@ -10,12 +10,6 @@ import com.geneus.imaginibox.utils.FilterUtils;
 import jp.co.cyberagent.android.gpuimage.GPUImageView;
 
 public class SetImageAsync extends AsyncTask<String, Void, Void> {
-    /*
-    filter type:
-    0 - blurred.
-    1 - blurred.
-     */
-
     private int filterType;
     private GPUImageView gpuImageView;
     private Context context;
