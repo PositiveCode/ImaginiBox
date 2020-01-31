@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.geneus.imaginibox.R;
-import com.geneus.imaginibox.ui.TriSquareLinearLayout;
+import com.geneus.imaginibox.ui.viewComponents.TriSquareLinearLayout;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View {
 
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         initView();
         initClickListener();
 
-        Toast.makeText(this, "Tap the box to get started.. ", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Tap on the box to see images with different filters.. ", Toast.LENGTH_SHORT).show();
     }
 
     private void initView() {
