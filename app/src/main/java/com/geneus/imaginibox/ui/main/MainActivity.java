@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
         initView();
         initClickListener();
+
+        Toast.makeText(this, "Tap the box to get started.. ", Toast.LENGTH_SHORT).show();
     }
 
     private void initView() {

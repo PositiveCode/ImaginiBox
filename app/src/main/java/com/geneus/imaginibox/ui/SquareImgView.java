@@ -2,9 +2,9 @@ package com.geneus.imaginibox.ui;
 
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.widget.Toast;
 
 import androidx.appcompat.widget.AppCompatImageView;
 
@@ -12,8 +12,11 @@ import com.bumptech.glide.Glide;
 import com.geneus.imaginibox.R;
 
 public class SquareImgView extends AppCompatImageView {
+
     public SquareImgView(Context context) {
         super(context);
+
+        setBackground(getContext().getDrawable(R.drawable.bg_square_frame_black));
     }
 
     public SquareImgView(Context context, AttributeSet attrs) {
@@ -40,29 +43,25 @@ public class SquareImgView extends AppCompatImageView {
                 this.setBackgroundColor(getContext().getColor(R.color.faded_gray));
                 this.setPaddingRelative(8, 8, 8, 8);
 
+                Drawable drawable = getContext().getDrawable(R.drawable.ic_china);
+
                 if(tapCount == 0){
-                    Glide.with(getContext().getApplicationContext())
-                            .load(getContext().getDrawable(R.drawable.ic_china))
-                            .into(this);
-                    tapCount++;
+                    drawable = getContext().getDrawable(R.drawable.ic_china);
                 }else if(tapCount == 1){
-                    Glide.with(getContext().getApplicationContext())
-                            .load(getContext().getDrawable(R.drawable.ic_usa))
-                            .into(this);
-                    tapCount++;
+                    drawable = getContext().getDrawable(R.drawable.ic_usa);
                 }else if(tapCount == 2){
-                    Glide.with(getContext().getApplicationContext())
-                            .load(getContext().getDrawable(R.drawable.ic_malaysia))
-                            .into(this);
-                    tapCount++;
+                    drawable = getContext().getDrawable(R.drawable.ic_malaysia);
                 }else if(tapCount == 3){
-                    Glide.with(getContext().getApplicationContext())
-                            .load(getContext().getDrawable(R.drawable.ic_japan))
-                            .into(this);
+                    drawable = getContext().getDrawable(R.drawable.ic_japan);
                     tapCount = 0;
                 }
 
-                Toast.makeText(getContext(), "tapped..", Toast.LENGTH_SHORT).show();
+                Glide.with(getContext().getApplicationContext())
+                        .load(drawable)
+                        .into(this);
+
+                tapCount++;
+
                 break;
             }
 

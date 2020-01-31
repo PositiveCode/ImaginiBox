@@ -7,8 +7,6 @@ import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 
-import com.geneus.imaginibox.R;
-
 public class TriSquareLinearLayout extends LinearLayout {
 
     ImageView imgView1;
@@ -25,10 +23,6 @@ public class TriSquareLinearLayout extends LinearLayout {
         imgView1 = new SquareImgView(context);
         imgView2 = new SquareImgView(context);
         imgView3 = new SquareImgView(context);
-
-        imgView1.setBackgroundColor(context.getResources().getColor(R.color.colorPrimaryDark));
-        imgView2.setBackgroundColor(context.getResources().getColor(R.color.colorPrimary));
-        imgView3.setBackgroundColor(context.getResources().getColor(R.color.colorAccent));
 
         addView(imgView1, params);
         addView(imgView2, params);
