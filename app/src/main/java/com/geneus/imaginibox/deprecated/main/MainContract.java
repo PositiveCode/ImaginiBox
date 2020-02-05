@@ -1,6 +1,6 @@
-package com.geneus.imaginibox.ui.deprecated.main;
+package com.geneus.imaginibox.deprecated.main;
 
-import com.geneus.imaginibox.base.BaseView;
+import com.geneus.imaginibox.deprecated.base.BaseView;
 
 public interface MainContract {
     interface View extends BaseView<Presenter> {

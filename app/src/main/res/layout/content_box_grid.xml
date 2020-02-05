@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".deprecated.main.MainActivity">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.main.BoxGridActivity"
+    tools:showIn="@layout/activity_box_grid">
 
-    <LinearLayout
-        android:id="@+id/llCanvas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvGridSquares"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -36,5 +37,4 @@
             android:text="3x3" />
 
     </LinearLayout>
-
 </RelativeLayout>

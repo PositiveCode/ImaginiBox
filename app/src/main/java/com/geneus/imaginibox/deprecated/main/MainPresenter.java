@@ -1,4 +1,4 @@
-package com.geneus.imaginibox.ui.deprecated.main;
+package com.geneus.imaginibox.deprecated.main;
 
 import android.content.Context;
 

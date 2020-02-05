@@ -1,4 +1,4 @@
-package com.geneus.imaginibox.ui.viewComponents.GPUImageView;
+package com.geneus.imaginibox.deprecated.viewComponents.GPUImageView;
 
 
 import android.content.Context;

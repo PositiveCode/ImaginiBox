@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ImaginiBox</string>
+    <string name="title_activity_box_grid">BoxGridActivity</string>
 </resources>

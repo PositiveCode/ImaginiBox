@@ -1,4 +1,4 @@
-package com.geneus.imaginibox.ui.deprecated.main;
+package com.geneus.imaginibox.deprecated.main;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.geneus.imaginibox.R;
-import com.geneus.imaginibox.ui.viewComponents.LinearLayout.TriSquareLinearLayout;
+import com.geneus.imaginibox.deprecated.viewComponents.LinearLayout.TriSquareLinearLayout;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View {
 
